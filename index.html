@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicolás Pozzi - DevOps Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="container">
+      <h1>Nicolás Pozzi</h1>
+      <ul>
+        <li><a href="#about" data-lang="es">Sobre Mí</a><a href="#about" data-lang="en" class="hidden">About Me</a></li>
+        <li><a href="#experience" data-lang="es">Experiencia</a><a href="#experience" data-lang="en" class="hidden">Experience</a></li>
+        <li><a href="#projects" data-lang="es">Proyectos</a><a href="#projects" data-lang="en" class="hidden">Projects</a></li>
+        <li><a href="#certifications" data-lang="es">Certificaciones</a><a href="#certifications" data-lang="en" class="hidden">Certifications</a></li>
+        <li><button id="language-toggle">EN</button></li>
+       
+    </div>
+  </nav>
+
+  <!-- Sección de Inicio -->
+  <header>
+    <div class="container">
+      <h2 data-lang="es">DevOps Engineer</h2>
+      <h2 data-lang="en" class="hidden">DevOps Engineer</h2>
+      <p data-lang="es">Especializado en infraestructura cloud, automatización y administración de servidores.</p>
+      <p data-lang="en" class="hidden">Specialized in cloud infrastructure, automation, and server administration.</p>
+      <div class="cta-buttons">
+        <a href="assets/cv-es.pdf" download class="btn" data-lang="es">Descarga mi CV</a>
+        <a href="assets/cv-en.pdf" download class="btn hidden" data-lang="en">Download my CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección Sobre Mí -->
+  <section id="about">
+    <div class="container">
+      <h2 data-lang="es">Sobre Mí</h2>
+      <h2 data-lang="en" class="hidden">About Me</h2>
+      <div class="about-content">
+        <img src="assets/profile.jpg" alt="Nicolás Pozzi" class="profile-img">
+        <div class="about-text">
+          <p data-lang="es">Hola, mi nombre es Nicolás Pozzi, un <strong>DevOps Engineer</strong> con más de 3 años de experiencia en la administración de infraestructuras cloud, automatización de procesos, monitoreo y gestión de servidores. En mi trayectoria adquirí un profundo conocimiento en la administración de servidores y redes, y luego evolucioné hacia roles de DevOps, implementando soluciones escalables y seguras utilizando tecnologías como AWS, Terraform, Kubernetes, Docker y más.</p>
+          <p data-lang="en" class="hidden">Hello, my name is Nicolas Pozzi, a <strong>DevOps Engineer</strong> with more than 3 years of experience in cloud infrastructure administration, process automation, monitoring, and server management. In my career I gained deep knowledge in server and network administration, and then evolved into DevOps roles, implementing scalable and secure solutions using technologies such as AWS, Terraform, Kubernetes, Docker and more.</p>
+          <h3 data-lang="es">Habilidades Clave</h3>
+          <h3 data-lang="en" class="hidden">Key Skills</h3>
+          <div class="skills-logos">
+            <img src="assets/aws-logo.png" alt="AWS">
+            <img src="assets/gcp.png" alt="GCP">
+            <img src="assets/azure-logo.png" alt="Azure">
+            <img src="assets/docker-logo.png" alt="Docker">
+            <img src="assets/compose.png" alt="Compose">
+            <img src="assets/docker-swarm.png" alt="DockerSwarm">
+            <img src="assets/kubernetes-logo.png" alt="Kubernetes">
+            <img src="assets/openshift-logo.png" alt="Openshift">
+            <img src="assets/terraform-logo.png" alt="Terraform">
+            <img src="assets/ansible-logo.png" alt="Ansible">
+            <img src="assets/jenkins.png" alt="Jenkins">
+            <img src="assets/git.png" alt="Git">
+            <img src="assets/python-logo.png" alt="Python">
+            <img src="assets/javas.png" alt="Javascript">
+            <img src="assets/html.png" alt="HTML">
+            <img src="assets/css.png" alt="CSS">
+            <img src="assets/grafana.png" alt="Grafana">
+            <img src="assets/prom.png" alt="Prometheus">
+            <img src="assets/cloudflare.png" alt="Cloudflare">
+            <img src="assets/nginx.png" alt="Nginx">
+            <img src="assets/mysql.png" alt="Mysql">
+            <img src="assets/sql.png" alt="SQL">
+            <img src="assets/soft.png" alt="Soft">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Experiencia -->
+  <section id="experience">
+    <div class="container">
+      <h2 data-lang="es">Experiencia Laboral</h2>
+      <h2 data-lang="en" class="hidden">Work Experience</h2>
+      <div class="timeline">
+        <!-- Experiencia 1: Kolektor UT -->
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="card-front">
+              <h3 data-lang="es">System Administrator - DevOps</h3>
+              <h3 data-lang="en" class="hidden">System Administrator - DevOps</h3>
+              <p>Kolektor UT</p>
+              <p><strong data-lang="es">oct. 2022 - actualidad</strong><strong data-lang="en" class="hidden">Oct 2022 - Present</strong></p>
+              <button class="toggle-details" aria-label="Mostrar detalles">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="card-back">
+              <ul>
+                <li data-lang="es">Administración de servidores (Debian, Ubuntu, Oracle Linux, Windows).</li>
+                <li data-lang="en" class="hidden">Server administration (Debian, Ubuntu, Oracle Linux, Windows).</li>
+                <li data-lang="es">Monitoreo con Grafana y Prometheus.</li>
+                <li data-lang="en" class="hidden">Monitoring with Grafana and Prometheus.</li>
+                <li data-lang="es">Configuración y administración de Nginx y Cloudflare.</li>
+                <li data-lang="en" class="hidden">Configuration and administration of Nginx and Cloudflare.</li>
+                <li data-lang="es">Automatización con Ansible y Python (Python Flask).</li>
+                <li data-lang="en" class="hidden">Automation with Ansible and Python (Python Flask).</li>
+                <li data-lang="es">Automatizaciones con Selenium.</li>
+                <li data-lang="en" class="hidden">Automations with Selenium.</li>
+                <li data-lang="es">Administración de Amazon Web Services (AWS).</li>
+                <li data-lang="en" class="hidden">Amazon Web Services (AWS) administration.</li>
+                <li data-lang="es">Creación de arquitecturas en AWS con Terraform.</li>
+                <li data-lang="en" class="hidden">Creation of architectures on AWS with Terraform.</li>
+                <li data-lang="es">Uso de Docker y Docker Compose.</li>
+                <li data-lang="en" class="hidden">Use of Docker and Docker Compose.</li>
+                <li data-lang="es">Administración de GitLab.</li>
+                <li data-lang="en" class="hidden">GitLab administration.</li>
+                <li data-lang="es">Instalación y configuración de Oracle Database y PostgreSQL.</li>
+                <li data-lang="en" class="hidden">Installation and configuration of Oracle Database and PostgreSQL.</li>
+                <li data-lang="es">Creación de pipelines en Jenkins (build, package, deploy).</li>
+                <li data-lang="en" class="hidden">Creating pipelines in Jenkins (build, package, deploy).</li>
+                <li data-lang="es">Configuración de webhooks en Jenkins.</li>
+                <li data-lang="en" class="hidden">Configuration of webhooks in Jenkins.</li>
+                <li data-lang="es">Administración básica de Microsoft Azure.</li>
+                <li data-lang="en" class="hidden">Basic administration of Microsoft Azure.</li>
+                <li data-lang="es">Gestión de Kubernetes y OpenShift.</li>
+                <li data-lang="en" class="hidden">Management of Kubernetes and OpenShift.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiencia 2: Loyal Solutions -->
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="card-front">
+              <h3 data-lang="es">Analista de Infraestructura</h3>
+              <h3 data-lang="en" class="hidden">Infrastructure Analyst</h3>
+              <p>LOYAL Solutions</p>
+              <p><strong data-lang="es">abr. 2022 - sept. 2022</strong><strong data-lang="en" class="hidden">Apr 2022 - Sep 2022</strong></p>
+              <button class="toggle-details" aria-label="Mostrar detalles">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="card-back">
+              <ul>
+                <li data-lang="es">Administración de bases de datos (MySQL, SQL, ORACLE).</li>
+                <li data-lang="en" class="hidden">Database administration (MySQL, SQL, ORACLE).</li>
+                <li data-lang="es">Administración de servidores (Debian, Ubuntu, CentOS, Windows).</li>
+                <li data-lang="en" class="hidden">Server administration (Debian, Ubuntu, CentOS, Windows).</li>
+                <li data-lang="es">Monitoreo de infraestructura con Zabbix.</li>
+                <li data-lang="en" class="hidden">Infrastructure monitoring with Zabbix.</li>
+                <li data-lang="es">Implementación de backups con Veeam (backups completos mensuales/diarios, binlogs).</li>
+                <li data-lang="en" class="hidden">Implementation of backups with Veeam (full monthly/daily backups, binlogs).</li>
+                <li data-lang="es">Administración de servidores cloud (GCP, AWS).</li>
+                <li data-lang="en" class="hidden">Cloud server administration (GCP, AWS).</li>
+                <li data-lang="es">DevOps Jr (Terraform en GCP + Docker).</li>
+                <li data-lang="en" class="hidden">Junior DevOps (Terraform on GCP + Docker).</li>
+                <li data-lang="es">Documentación de tareas de infraestructura.</li>
+                <li data-lang="en" class="hidden">Documentation of infrastructure tasks.</li>
+                <li data-lang="es">Configuración de certificados SSL.</li>
+                <li data-lang="en" class="hidden">SSL certificates configuration.</li>
+                <li data-lang="es">Uso de VMware.</li>
+                <li data-lang="en" class="hidden">Use of VMware.</li>
+                <li data-lang="es">Conexiones AD FS, LDAP, VPN (Fortinet).</li>
+                <li data-lang="en" class="hidden">AD FS, LDAP, VPN (Fortinet) connections.</li>
+                <li data-lang="es">Capacitación al equipo de soporte técnico.</li>
+                <li data-lang="en" class="hidden">Training for the technical support team.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiencia 3: Consultorías de Infraestructura -->
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="card-front">
+              <h3 data-lang="es">Consultorías de Infraestructura</h3>
+              <h3 data-lang="en" class="hidden">Infrastructure Consultancies</h3>
+              <p>Profesional independiente</p>
+              <p><strong data-lang="es">ene. 2021 - mar. 2022</strong><strong data-lang="en" class="hidden">Jan 2021 - Mar 2022</strong></p>
+              <button class="toggle-details" aria-label="Mostrar detalles">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="card-back">
+              <ul>
+                <li data-lang="es">Migraciones de servicios con máquinas virtuales EC2 (AWS).</li>
+                <li data-lang="en" class="hidden">Service migrations with EC2 virtual machines (AWS).</li>
+                <li data-lang="es">Configuración de redes VPN (Fortinet, OpenVPN, PulseSecure, Cisco AnyConnect, Sophos Connect).</li>
+                <li data-lang="en" class="hidden">VPN network configuration (Fortinet, OpenVPN, PulseSecure, Cisco AnyConnect, Sophos Connect).</li>
+                <li data-lang="es">Configuración de DNS.</li>
+                <li data-lang="en" class="hidden">DNS configuration.</li>
+                <li data-lang="es">Conexiones LDAP.</li>
+                <li data-lang="en" class="hidden">LDAP connections.</li>
+                <li data-lang="es">Configuración de certificados SSL.</li>
+                <li data-lang="en" class="hidden">SSL certificates configuration.</li>
+                <li data-lang="es">Administración de bases de datos (MySQL, SQL).</li>
+                <li data-lang="en" class="hidden">Database administration (MySQL, SQL).</li>
+                <li data-lang="es">Administración de servidores cloud (GCP).</li>
+                <li data-lang="en" class="hidden">Cloud server administration (GCP).</li>
+                <li data-lang="es">Uso de VMware.</li>
+                <li data-lang="en" class="hidden">Use of VMware.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiencia 4: Soporte Técnico -->
+        <div class="timeline-item">
+          <div class="experience-card">
+            <div class="card-front">
+              <h3 data-lang="es">Soporte Técnico</h3>
+              <h3 data-lang="en" class="hidden">Technical Support</h3>
+              <p>Empresa Local</p>
+              <p><strong data-lang="es">feb. 2020 - dic. 2020</strong><strong data-lang="en" class="hidden">Feb 2020 - Dec 2020</strong></p>
+              <button class="toggle-details" aria-label="Mostrar detalles">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="card-back">
+              <ul>
+                <li data-lang="es">Administración de Active Directory.</li>
+                <li data-lang="en" class="hidden">Active Directory administration.</li>
+                <li data-lang="es">Reparación de PC.</li>
+                <li data-lang="en" class="hidden">PC repair.</li>
+                <li data-lang="es">Configuración de redes IP y VPN.</li>
+                <li data-lang="en" class="hidden">IP and VPN network configuration.</li>
+                <li data-lang="es">Administración de Windows Server y Ubuntu Server.</li>
+                <li data-lang="en" class="hidden">Windows Server and Ubuntu Server administration.</li>
+                <li data-lang="es">Configuración de telefonía IP.</li>
+                <li data-lang="en" class="hidden">IP telephony configuration.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Proyectos -->
+  <section id="projects">
+    <div class="container">
+      <h2 data-lang="es">Proyectos Destacados</h2>
+      <h2 data-lang="en" class="hidden">Featured Projects</h2>
+      <p class="section-subtitle" data-lang="es">Algunos de los proyectos en los que he trabajado.</p>
+      <p class="section-subtitle hidden" data-lang="en">Some of the projects I've worked on.</p>
+
+      <!-- Tarjeta de Monitoreo de Servidores y URLs -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- Frente de la tarjeta -->
+          <div class="flip-card-front">
+            <h3 data-lang="es">Monitoreo General de Recursos</h3>
+            <h3 data-lang="en" class="hidden">General Resource Monitoring</h3>
+            <div class="project-details">
+              <p data-lang="es">
+                Implementé un sistema de monitoreo integral para servidores (Windows, Linux, Kubernetes, OpenShift) y URLs, utilizando <strong>Prometheus</strong> como backend y <strong>Grafana</strong> como frontend. El sistema incluye:
+              </p>
+              <p data-lang="en" class="hidden">
+                I implemented a comprehensive monitoring system for servers (Windows, Linux, Kubernetes, OpenShift) and URLs, using <strong>Prometheus</strong> as the backend and <strong>Grafana</strong> as the frontend. The system includes:
+              </p>
+              <ul>
+                <li data-lang="es">Monitoreo del estado de salud de URLs con alertas en tiempo real.</li>
+                <li data-lang="en" class="hidden">Real-time health monitoring of URLs with alerts.</li>
+                <li data-lang="es">Alertas personalizadas para métricas clave (CPU, memoria, disco).</li>
+                <li data-lang="en" class="hidden">Custom alerts for key metrics (CPU, memory, disk).</li>
+                <li data-lang="es">Predicción de llenado de disco y capacidad de almacenamiento.</li>
+                <li data-lang="en" class="hidden">Disk space and storage capacity prediction.</li>
+                <li data-lang="es">Separación de monitoreos: servidores no productivos, productivos y en AWS.</li>
+                <li data-lang="en" class="hidden">Separate monitoring for non-production, production, and AWS servers.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Reverso de la tarjeta -->
+          <div class="flip-card-back">
+            <h3 data-lang="es">Herramientas y Tecnologías</h3>
+            <h3 data-lang="en" class="hidden">Tools and Technologies</h3>
+            <div class="tools-list">
+              <ul>
+                <li><strong>Backend:</strong> Prometheus</li>
+                <li><strong>Frontend:</strong> Grafana</li>
+                <li><strong>Alertas:</strong> Configuradas con PromQL</li>
+                <li><strong>Servidores:</strong> Windows, Linux</li>
+                <li><strong>Plataformas:</strong> Kubernetes, OpenShift, Docker, Docker Swarm</li>
+                <li><strong>Bases de datos y colas:</strong> Cassandra, SQS, Nifi</li>
+                <li><strong>Entornos:</strong> On-premise y AWS</li>
+              </ul>
+            </div>
+            <!-- Íconos de herramientas -->
+            <div class="tools-icons">
+              <img src="assets/prom.png" alt="Prometheus" title="Prometheus">
+              <img src="assets/grafana.png" alt="Grafana" title="Grafana">
+              <img src="assets/kubernetes-logo.png" alt="Kubernetes" title="Kubernetes">
+              <img src="assets/openshift-logo.png" alt="Openshift" title="Openshift">
+              <img src="assets/docker-swarm.png" alt="DockerSwarm" title="DockerSwarm">
+              <img src="assets/docker-logo.png" alt="Docker" title="Docker">
+              <img src="assets/aws-logo.png" alt="AWS" title="AWS">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Proyecto: Migración a Arquitectura Híbrida en AWS -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- Frente de la tarjeta -->
+          <div class="flip-card-front">
+            <h3 data-lang="es">Migración a Arquitectura Híbrida en AWS</h3>
+            <h3 data-lang="en" class="hidden">Migration to Hybrid Architecture on AWS</h3>
+            <div class="project-details">
+              <p data-lang="es">
+                Lideré la migración de una arquitectura basada en <strong>EC2 con Docker y ALB</strong> a una arquitectura <strong>híbrida</strong> que combina componentes serverless y tradicionales en AWS. Este cambio incluyó:
+              </p>
+              <p data-lang="en" class="hidden">
+                I led the migration from an architecture based on <strong>EC2 with Docker and ALB</strong> to a <strong>hybrid</strong> architecture that combines serverless and traditional components on AWS. This change included:
+              </p>
+              <ul>
+                <li data-lang="es">Implementación de <strong>Cloudflare</strong> como primera capa de seguridad y caché.</li>
+                <li data-lang="en" class="hidden">Implementation of <strong>Cloudflare</strong> as the first layer of security and cache.</li>
+                <li data-lang="es">Configuración de <strong>CloudFront</strong> para la distribución de contenido y enrutamiento según paths.</li>
+                <li data-lang="en" class="hidden">Configuration of <strong>CloudFront</strong> for content delivery and path-based routing.</li>
+                <li data-lang="es">Uso de <strong>S3</strong> para alojar aplicaciones estáticas, mejorando la escalabilidad y reduciendo costos.</li>
+                <li data-lang="en" class="hidden">Use of <strong>S3</strong> to host static applications, improving scalability and reducing costs.</li>
+                <li data-lang="es">Implementación de <strong>AWS Lambda</strong> para lógica serverless en aplicaciones específicas.</li>
+                <li data-lang="en" class="hidden">Implementation of <strong>AWS Lambda</strong> for serverless logic in specific applications.</li>
+                <li data-lang="es">Mantenimiento de <strong>Application Load Balancers (ALB)</strong> y <strong>EC2 con Docker</strong> para aplicaciones dinámicas.</li>
+                <li data-lang="en" class="hidden">Maintenance of <strong>Application Load Balancers (ALB)</strong> and <strong>EC2 with Docker</strong> for dynamic applications.</li>
+                <li data-lang="es">Mejoras en seguridad con <strong>AWS WAF</strong> y políticas de seguridad en Cloudflare.</li>
+                <li data-lang="en" class="hidden">Security improvements with <strong>AWS WAF</strong> and Cloudflare security policies.</li>
+                <li data-lang="es">Automatización de despliegues con <strong>Terraform</strong> y <strong>Jenkins</strong>, acelerando la creación de ambientes.</li>
+                <li data-lang="en" class="hidden">Deployment automation with <strong>Terraform</strong> and <strong>Jenkins</strong>, speeding up environment creation.</li>
+                <li data-lang="es">Reducción de costos y mejora en la eficiencia operativa.</li>
+                <li data-lang="en" class="hidden">Cost reduction and improvement in operational efficiency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Reverso de la tarjeta -->
+          <div class="flip-card-back">
+            <h3 data-lang="es">Herramientas y Tecnologías</h3>
+            <h3 data-lang="en" class="hidden">Tools and Technologies</h3>
+            <div class="tools-list">
+              <ul>
+                <li><strong>Seguridad y Caché:</strong> Cloudflare</li>
+                <li><strong>Distribución de Contenido:</strong> CloudFront</li>
+                <li><strong>Almacenamiento Estático:</strong> Amazon S3</li>
+                <li><strong>Serverless:</strong> AWS Lambda</li>
+                <li><strong>Balanceo de Carga:</strong> Application Load Balancer (ALB)</li>
+                <li><strong>Contenedores:</strong> Docker en EC2</li>
+                <li><strong>Orquestación:</strong> Terraform</li>
+                <li><strong>Automatización:</strong> Jenkins</li>
+                <li><strong>Seguridad:</strong> AWS WAF y NGINX</li>
+                <li><strong>Monitorización:</strong> Grafana y Prometheus</li>
+                <li><strong>Registro de Contenedores:</strong> ECR (Elastic Container Registry)</li>
+                <li><strong>Gestión de Dominios:</strong> Route 53</li>
+              </ul>
+            </div>
+            <!-- Íconos de herramientas -->
+            <div class="tools-icons">
+              <img src="assets/cloudflare.png" alt="Cloudflare" title="Cloudflare">
+              <img src="assets/aws-logo.png" alt="AWS" title="AWS">
+              <img src="assets/terraform-logo.png" alt="Terraform" title="Terraform">
+              <img src="assets/jenkins.png" alt="Jenkins" title="Jenkins">
+              <img src="assets/docker-logo.png" alt="Docker" title="Docker">
+              <img src="assets/nginx.png" alt="Nginx" title="Nginx">
+              <img src="assets/grafana.png" alt="Grafana" title="Grafana">
+              <img src="assets/prom.png" alt="Prometheus" title="Prometheus">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Proyecto: Circuito de Backups General -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- Frente de la tarjeta -->
+          <div class="flip-card-front">
+            <h3 data-lang="es">Circuito de Backups General</h3>
+            <h3 data-lang="en" class="hidden">General Backup Circuit</h3>
+            <div class="project-details">
+              <p data-lang="es">
+                Desarrollé un <strong>agente de Python</strong> para realizar backups automatizados de carpetas, directorios del filesystem y contenedores de Docker. Este circuito de backups incluye:
+              </p>
+              <p data-lang="en" class="hidden">
+                I developed a <strong>Python agent</strong> to automate backups of folders, filesystem directories, and Docker containers. This backup circuit includes:
+              </p>
+              <ul>
+                <li data-lang="es">Backups de <strong>carpetas y directorios</strong> del filesystem.</li>
+                <li data-lang="en" class="hidden">Backups of <strong>folders and directories</strong> from the filesystem.</li>
+                <li data-lang="es">Exportación de <strong>contenedores de Docker</strong> a archivos <code>.tar</code>, que luego pueden importarse como imágenes de Docker.</li>
+                <li data-lang="en" class="hidden">Export of <strong>Docker containers</strong> to <code>.tar</code> files, which can later be imported as Docker images.</li>
+                <li data-lang="es">Almacenamiento seguro de los backups en <strong>Amazon S3</strong>.</li>
+                <li data-lang="en" class="hidden">Secure storage of backups in <strong>Amazon S3</strong>.</li>
+                <li data-lang="es">Integración con <strong>Grafana y Prometheus</strong> para monitorear el estado de los backups.</li>
+                <li data-lang="en" class="hidden">Integration with <strong>Grafana and Prometheus</strong> to monitor backup status.</li>
+                <li data-lang="es">Alertas en caso de backups fallidos o si no se realizan backups durante más de 10 días.</li>
+                <li data-lang="en" class="hidden">Alerts for failed backups or if no backups are made for more than 10 days.</li>
+                <li data-lang="es">Creación automatizada de infraestructura con <strong>Terraform</strong>.</li>
+                <li data-lang="en" class="hidden">Automated infrastructure creation with <strong>Terraform</strong>.</li>
+                <li data-lang="es">Pipelines de <strong>Jenkins</strong> para ejecutar Terraform y gestionar jobs de backups.</li>
+                <li data-lang="en" class="hidden"><strong>Jenkins pipelines</strong> to run Terraform and manage backup jobs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Reverso de la tarjeta -->
+          <div class="flip-card-back">
+            <h3 data-lang="es">Herramientas y Tecnologías</h3>
+            <h3 data-lang="en" class="hidden">Tools and Technologies</h3>
+            <div class="tools-list">
+              <ul>
+                <li><strong>Lenguaje:</strong> Python</li>
+                <li><strong>Almacenamiento:</strong> Amazon S3</li>
+                <li><strong>Contenedores:</strong> Docker</li>
+                <li><strong>Orquestación:</strong> Terraform</li>
+                <li><strong>Automatización:</strong> Jenkins</li>
+                <li><strong>Monitorización:</strong> Grafana y Prometheus</li>
+                <li><strong>Alertas:</strong> Configuradas en Prometheus</li>
+                <li><strong>Infraestructura:</strong> Creación automatizada con Terraform</li>
+                <li><strong>Pipelines:</strong> Jenkins para ejecución de Terraform y jobs de backups</li>
+              </ul>
+            </div>
+            <!-- Íconos de herramientas -->
+            <div class="tools-icons">
+              <img src="assets/python-logo.png" alt="Python" title="Python">
+              <img src="assets/aws-logo.png" alt="Amazon S3" title="Amazon S3">
+              <img src="assets/docker-logo.png" alt="Docker" title="Docker">
+              <img src="assets/terraform-logo.png" alt="Terraform" title="Terraform">
+              <img src="assets/jenkins.png" alt="Jenkins" title="Jenkins">
+              <img src="assets/grafana.png" alt="Grafana" title="Grafana">
+              <img src="assets/prom.png" alt="Prometheus" title="Prometheus">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Sección Certificaciones -->
+<section id="certifications">
+  <div class="container">
+    <h2 data-lang="es">Certificaciones</h2>
+    <h2 data-lang="en" class="hidden">Certifications</h2>
+    <div class="certifications-grid">
+      <!-- Certificación: AWS Knowledge: Cloud Essentials 2023 -->
+      <div class="certification-card">
+        <a href="https://www.credly.com/badges/30dce607-6266-44d6-8bac-bb8f46ef5d9a/linked_in_profile" target="_blank" rel="noopener noreferrer">
+          <img src="assets/aws-cloud-essentials.png" alt="AWS Knowledge: Cloud Essentials">
+          <div class="certification-overlay">
+            <p data-lang="es">AWS Knowledge: Cloud Essentials</p>
+            <p data-lang="en" class="hidden">AWS Knowledge: Cloud Essentials</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Certificación: AWS Knowledge: Networking Core 2023 -->
+      <div class="certification-card">
+        <a href="https://www.credly.com/badges/011c14b5-290c-4830-8932-f1482d69c6b6/linked_in_profile" target="_blank" rel="noopener noreferrer">
+          <img src="assets/aws-networking.png" alt="AWS Knowledge: Networking Core">
+          <div class="certification-overlay">
+            <p data-lang="es">AWS Knowledge: Networking Core</p>
+            <p data-lang="en" class="hidden">AWS Knowledge: Networking Core</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Certificación: AWS Certified Solutions Architect Associate -->
+      <div class="certification-card">
+        <a href="https://www.udemy.com/certificate/UC-0fd57d70-6054-4dcd-ab3d-9b0a45ff1a10/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/aws-certified-solutions-architect-associate.png" alt="AWS Certified Solutions Architect Associate">
+          <div class="certification-overlay">
+            <p data-lang="es">AWS Certified Solutions Architect Associate - 2024</p>
+            <p data-lang="en" class="hidden">AWS Certified Solutions Architect Associate - 2024</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Certificación: AWS Certified SysOps Administrator Associate SOA-C02 -->
+      <div class="certification-card">
+        <a href="https://www.udemy.com/certificate/UC-f1ac5b8c-83de-45cd-a3b0-8389c5f06e0a/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/aws-certified-sysops.png" alt="AWS Certified SysOps Administrator Associate SOA-C02">
+          <div class="certification-overlay">
+            <p data-lang="es">AWS Certified SysOps Administrator Associate SOA-C02</p>
+            <p data-lang="en" class="hidden">AWS Certified SysOps Administrator Associate SOA-C02</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Certificación: Designing Microsoft Azure Infrastructure Solutions (AZ-305) -->
+      <div class="certification-card">
+        <a href="https://credentials.itcollege.com.ar/314e88a2-0b26-4735-8569-a4cfc563b4fa#acc.dLJvNuYq" target="_blank" rel="noopener noreferrer">
+          <img src="assets/azure-az-305-certified.png" alt="Azure AZ-305 Certified">
+          <div class="certification-overlay">
+            <p data-lang="es">Designing Microsoft Azure Infrastructure Solutions (AZ-305) - 2023</p>
+            <p data-lang="en" class="hidden">Designing Microsoft Azure Infrastructure Solutions (AZ-305) - 2023</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Certificación: Google Cloud Platform (GCP) -->
+      <div class="certification-card">
+        <a href="https://platzi.com/p/Nicolaspozz_/ruta/49-google-cloud/diploma/detalle/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/google-cloud-platzi.png" alt="Google Cloud Certified">
+          <div class="certification-overlay">
+            <p data-lang="es">Google Cloud Platform</p>
+            <p data-lang="en" class="hidden">Google Cloud Platform</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pie de página -->
+<footer>
+  <div class="container">
+    <p data-lang="es">&copy; 2025 Nicolás Pozzi. Todos los derechos reservados.</p>
+    <p data-lang="en" class="hidden">&copy; 2025 Nicolás Pozzi. All rights reserved.</p>
+    <ul>
+      <!-- LinkedIn -->
+      <li>
+        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </li>
+      <!-- Email -->
+      <li>
+        <a href="mailto:nicolaspozzi00@gmail.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </li>
+      <!-- Teléfono -->
+      <li>
+        <a href="tel:+543467417023">
+          <i class="fas fa-phone"></i> +54 3467 417023
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+  <!-- Script para cambio de idioma y tarjetas interactivas -->
+  <script src="script.js"></script>
+</body>
+</html>

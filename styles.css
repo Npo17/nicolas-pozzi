@@ -1,0 +1,498 @@
+/* Estilos generales */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Barra de navegación */
+nav {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+nav h1 {
+  font-style: italic;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* Sección de Inicio */
+header {
+  background: url('assets/background.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.cta-buttons {
+  margin-top: 1rem;
+}
+
+.cta-buttons .btn {
+  background: #fff;
+  color: #007BFF;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+}
+
+/* Sección Sobre Mí */
+#about {
+  padding: 2rem 0;
+  background-color: #ffffff;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+
+.about-text h3 {
+  margin-top: 1rem;
+}
+
+.skills-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skills-logos img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Línea Temporal */
+#experience h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#experience h2.hidden {
+  display: none;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #004fe0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+/* Tarjetas de Experiencia */
+.experience-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+#experience {
+  background: linear-gradient(135deg, #3688e0, #ffffff);
+  padding: 2rem 0;
+}
+
+.card-front, .card-back {
+  padding: 20px;
+}
+
+.card-front {
+  background-color: #007BFF;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.card-back {
+  background-color: #f5f5f5;
+  color: #000000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* Botón de despliegue */
+.toggle-details {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Estado desplegado */
+.experience-card.active .card-back {
+  max-height: 500px;
+}
+
+/* Rotar el ícono cuando está activo */
+.experience-card.active .toggle-details i {
+  transform: rotate(180deg);
+}
+
+.toggle-details i {
+  transition: transform 0.3s ease;
+}
+
+/* Estilos para la lista dentro de la tarjeta */
+.card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-back li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-item {
+      width: 100%;
+      left: 0 !important;
+      padding: 10px;
+  }
+
+  .timeline::before {
+      left: 20px;
+  }
+}
+
+/* Estilos para la sección de proyectos */
+#projects {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #80bdff, #80bdff);
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para la tarjeta */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 450px; /* Altura base para todas las tarjetas */
+  perspective: 1000px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste específico para la segunda tarjeta */
+#projects .flip-card:nth-child(2) {
+  height: 550px; /* Aumentamos la altura de la segunda tarjeta */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.flip-card-front {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.flip-card-back {
+  background-color: #469ffd;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  overflow: hidden; /* Eliminamos el scroll */
+}
+
+/* Estilos para el contenido */
+.project-details {
+  margin-top: 10px;
+}
+
+.project-details p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.project-details ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.project-details li {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.tools-list ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.tools-list li {
+  font-size: 13px; /* Reducimos el tamaño de la fuente */
+  margin-bottom: 5px; /* Reducimos el margen inferior */
+}
+
+.code-example {
+  margin-top: 15px;
+  background-color: #278fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.code-example pre {
+  margin: 0;
+}
+
+.code-example code {
+  font-family: monospace;
+  font-size: 12px;
+  color: #d63384;
+}
+
+/* Estilos para títulos */
+h3 {
+  font-size: 16px; /* Reducimos el tamaño del título */
+  margin-bottom: 10px; /* Reducimos el margen inferior */
+}
+
+/* Estilos para los íconos de herramientas */
+.tools-icons {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Reducimos el espacio entre íconos */
+  margin-top: 15px;
+  flex-wrap: wrap;
+  padding: 5px; /* Reducimos el padding */
+}
+
+.tools-icons img {
+  width: 35px; /* Reducimos el tamaño de los íconos */
+  height: 35px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tools-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la sección de certificaciones */
+#certifications {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #80bdff, #80bdff); /* Mismo fondo que la sección de proyectos */
+}
+
+#certifications h2 {
+  font-size: 2.5rem;
+  color: #fff; /* Color blanco para el título */
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para el título */
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tarjetas responsivas */
+  gap: 20px; /* Espacio entre tarjetas */
+  padding: 0 20px;
+}
+
+.certification-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  aspect-ratio: 1 / 1; /* Mantener las tarjetas cuadradas */
+}
+
+.certification-card:hover {
+  transform: translateY(-10px); /* Efecto de levantar la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.certification-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+  display: block;
+}
+
+.certification-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.certification-card:hover .certification-overlay {
+  opacity: 1; /* Mostrar el texto al hacer hover */
+}
+
+.certification-overlay p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Pie de página */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  margin: 0 1rem;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+  display: none;
+}
