@@ -20,6 +20,27 @@ h1, h2, h3 {
 }
 
 /* Barra de navegación */
+/* Estilos para el contenedor del logo y el texto */
+.logo-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el logo y el texto */
+}
+
+/* Estilos para el logo */
+.logo {
+  width: 50px; /* Ajusta el tamaño del logo */
+  height: 50px;
+  margin-right: 30px; /* Espacio entre el logo y el texto */
+  border-radius: 60%; /* Opcional: si quieres un logo circular */
+}
+
+/* Estilos para el texto "Nicolás Pozzi" */
+nav h1 {
+  font-style: italic;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
 nav {
   background: #333;
   color: #fff;
