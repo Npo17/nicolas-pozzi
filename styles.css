@@ -488,24 +488,115 @@ h3 {
 /* Estilos para la sección de certificaciones */
 #certifications {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #80bdff, #80bdff); /* Mismo fondo que la sección de proyectos */
+  background: linear-gradient(135deg, #80bdff, #80bdff);
+  text-align: center;
 }
 
 #certifications h2 {
   font-size: 2.5rem;
-  color: #fff; /* Color blanco para el título */
+  color: #fff;
   text-align: center;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para el título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.certifications-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tarjetas responsivas */
-  gap: 20px; /* Espacio entre tarjetas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
+/* Estilos para la sección de certificaciones */
+#certifications {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #80bdff, #80bdff);
+  text-align: center;
+}
+
+#certifications h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.certifications-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilo especial para la tarjeta del título educativo */
+.education-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px; /* Ancho mayor para el título */
+  margin: 20px auto; /* Centrado vertical y horizontal */
+  position: relative;
+  aspect-ratio: 1 / 0.7; /* Proporción diferente para el título */
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.education-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.education-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.education-card:hover .education-overlay {
+  opacity: 1;
+}
+
+.education-overlay p {
+  margin: 0;
+  font-size: 18px; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* Estilo para las demás tarjetas de certificación */
 .certification-card {
   background-color: #fff;
   border-radius: 10px;
@@ -513,18 +604,18 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  aspect-ratio: 1 / 1; /* Mantener las tarjetas cuadradas */
+  aspect-ratio: 1 / 1;
 }
 
 .certification-card:hover {
-  transform: translateY(-10px); /* Efecto de levantar la tarjeta */
+  transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .certification-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+  object-fit: cover;
   display: block;
 }
 
@@ -533,7 +624,7 @@ h3 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -542,7 +633,7 @@ h3 {
 }
 
 .certification-card:hover .certification-overlay {
-  opacity: 1; /* Mostrar el texto al hacer hover */
+  opacity: 1;
 }
 
 .certification-overlay p {
@@ -550,6 +641,21 @@ h3 {
   font-size: 14px;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .education-card {
+    max-width: 90%;
+    aspect-ratio: 1 / 0.8; /* Proporción más cuadrada en móviles */
+  }
+  
+  .education-overlay p {
+    font-size: 16px; /* Tamaño un poco más pequeño en móviles */
+  }
+}
 /* Pie de página */
 footer {
   background: #333;
