@@ -162,7 +162,7 @@ header p {
 /* Responsividad para la imagen */
 @media (max-width: 992px) {
   .profile-img-container {
-    width: ;
+    width: 600px;
     height: 600px;
   }
 }
