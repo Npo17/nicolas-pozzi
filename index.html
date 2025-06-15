@@ -31,11 +31,30 @@
       <h2 data-lang="en" class="hidden">DevOps Engineer</h2>
       <p data-lang="es">Especializado en infraestructura cloud, automatización y administración de servidores.</p>
       <p data-lang="en" class="hidden">Specialized in cloud infrastructure, automation, and server administration.</p>
-      <div class="cta-buttons">
-        <a href="assets/cv-es.pdf" download class="btn" data-lang="es">Descarga mi CV</a>
-        <a href="assets/cv-en.pdf" download class="btn hidden" data-lang="en">Download my CV</a>
-      </div>
-    </div>
+      <!-- CTA Buttons -->
+<div class="cta-buttons">
+  <!-- UN solo botón con id y los textos dentro -->
+  <a href="assets/cv-es.pdf"
+     download
+     class="btn"
+     id="download-cv">
+
+    <!-- Texto normal (ES / EN) -->
+    <span class="btn-text" data-lang="es">Descarga mi CV</span>
+    <span class="btn-text hidden" data-lang="en">Download my CV</span>
+
+    <!-- Texto de hover (ES / EN) -->
+    <span class="btn-hover-text hidden" data-lang="es">¡Gracias por interesarte! 🚀</span>
+    <span class="btn-hover-text hidden" data-lang="en">Thanks for your interest! 🚀</span>
+  </a>
+
+  <!-- Mensaje de agradecimiento tras el clic -->
+  <div id="download-thanks" class="hidden">
+    <span data-lang="es">¡Gracias! Pronto estaré en tu equipo 🚀</span>
+    <span data-lang="en" class="hidden">Thanks! I hope to join your team soon 🚀</span>
+  </div>
+</div>
+
   </header>
 
 <!-- Sección Sobre Mí -->
