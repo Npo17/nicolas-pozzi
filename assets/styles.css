@@ -668,3 +668,33 @@ footer ul li a {
 .hidden {
   display: none;
 }
+
+/* ---- Interacciones para el botón de descarga ---- */
+#download-cv {
+  position: relative;
+}
+
+.btn-hover-text {
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #007BFF;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0.95;
+  transition: opacity 0.3s ease;
+}
+
+#download-thanks {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #007BFF;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s ease;
+}
