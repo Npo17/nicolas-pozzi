@@ -59,6 +59,10 @@
     });
   }
 
+  /**
+   * Festejo al descargar el CV — mismo clic para ES o EN (href cambia con el idioma).
+   * Mini documentos caen con pointer-events: none; no bloquea la página.
+   */
   function launchCvCelebration() {
     if (getReducedMotion()) return;
 
@@ -67,19 +71,22 @@
 
     root.innerHTML = "";
 
-    var count = 20;
+    var count = 28;
     var frag = document.createDocumentFragment();
     var i;
 
     for (i = 0; i < count; i++) {
       var el = document.createElement("span");
       el.className = "cv-mini-doc";
+      if (i % 3 === 0) {
+        el.classList.add("cv-mini-doc--accent");
+      }
       el.setAttribute("aria-hidden", "true");
       var startX = Math.random() * 100;
-      var delay = Math.random() * 0.4;
-      var dur = 2.1 + Math.random() * 0.85;
-      var rot = (Math.random() - 0.5) * 48;
-      var drift = (Math.random() - 0.5) * 100;
+      var delay = Math.random() * 0.45;
+      var dur = 1.95 + Math.random() * 0.95;
+      var rot = (Math.random() - 0.5) * 52;
+      var drift = (Math.random() - 0.5) * 110;
       el.style.left = startX + "%";
       el.style.animationDelay = delay + "s";
       el.style.animationDuration = dur + "s";
@@ -92,7 +99,7 @@
 
     window.setTimeout(function () {
       root.innerHTML = "";
-    }, 3400);
+    }, 3600);
   }
 
   function initDownloadCv() {
@@ -258,6 +265,33 @@
     nav.classList.toggle("is-scrolled", window.scrollY > 24);
   }
 
+  function initRevealOnScroll() {
+    if (getReducedMotion()) return;
+
+    var sections = document.querySelectorAll("main > section");
+    if (!sections.length) return;
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.06 }
+    );
+
+    sections.forEach(function (section) {
+      section.classList.add("reveal-on-scroll");
+      var rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92) {
+        section.classList.add("is-visible");
+      }
+      obs.observe(section);
+    });
+  }
+
   function initFlipCards() {
     if (getReducedMotion()) return;
 
@@ -309,6 +343,7 @@
   initExperienceCards();
   initNav();
   initScrollSpy();
+  initRevealOnScroll();
   initFlipCards();
 
   if (document.readyState === "loading") {

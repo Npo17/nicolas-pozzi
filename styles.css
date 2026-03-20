@@ -22,6 +22,8 @@
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --space-section: clamp(3rem, 6vw, 5.25rem);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --glow-blue: 0 0 0 1px rgba(59, 130, 246, 0.2), 0 8px 32px rgba(37, 99, 235, 0.18);
+  --glow-blue-strong: 0 0 0 1px rgba(59, 130, 246, 0.35), 0 12px 40px rgba(37, 99, 235, 0.22), 0 0 28px rgba(96, 165, 250, 0.25);
 }
 
 *,
@@ -93,6 +95,23 @@ p:last-child {
 #projects,
 #certifications {
   scroll-margin-top: 5.5rem;
+}
+
+/* Entrada suave al scroll (JS añade .is-visible) */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-scroll:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  .reveal-on-scroll {
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Focus visible */
@@ -470,28 +489,52 @@ button:focus-visible,
   transform: translateY(0);
 }
 
-/* CV: hover profesional y sutil (shimmer + elevación + borde) */
+/* CV: hover pro — texto alterna (JS) + shimmer + halo azul + pulso suave */
 .btn-cv {
   overflow: hidden;
   padding: 0;
   min-height: 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(165deg, #ffffff 0%, #f1f5f9 55%, #e8f0fe 100%);
   color: var(--color-primary-dark);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 8px 24px rgba(15, 23, 42, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 6px 20px rgba(15, 23, 42, 0.1);
+  transition: transform 0.25s var(--ease-out), border-color 0.25s;
 }
 
 .btn-cv:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 1) inset,
-    0 0 0 1px rgba(59, 130, 246, 0.15),
-    0 12px 32px rgba(29, 78, 216, 0.15);
-  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.55);
+  transform: translateY(-3px);
 }
 
 .btn-cv:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn-cv:hover {
+    animation: btnCvHaloPulse 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes btnCvHaloPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 1) inset,
+      0 0 0 1px rgba(59, 130, 246, 0.2),
+      0 12px 32px rgba(29, 78, 216, 0.18),
+      0 0 24px rgba(96, 165, 250, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 1) inset,
+      0 0 0 1px rgba(59, 130, 246, 0.4),
+      0 16px 44px rgba(29, 78, 216, 0.26),
+      0 0 42px rgba(96, 165, 250, 0.38);
+  }
 }
 
 .btn-cv-shimmer {
@@ -499,29 +542,32 @@ button:focus-visible,
   inset: 0;
   pointer-events: none;
   background: linear-gradient(
-    100deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.5) 50%,
-    transparent 60%
+    105deg,
+    transparent 32%,
+    rgba(255, 255, 255, 0.85) 48%,
+    rgba(191, 219, 254, 0.5) 52%,
+    transparent 68%
   );
-  transform: translateX(-100%);
+  transform: translateX(-120%) skewX(-12deg);
   opacity: 0;
 }
 
 .btn-cv:hover .btn-cv-shimmer {
-  animation: btnCvShimmer 0.75s var(--ease-out) forwards;
+  animation: btnCvShimmer 0.95s var(--ease-out) forwards;
 }
 
 @keyframes btnCvShimmer {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-120%) skewX(-12deg);
     opacity: 0;
   }
-  20% {
-    opacity: 0.4;
+
+  12% {
+    opacity: 0.75;
   }
+
   100% {
-    transform: translateX(100%);
+    transform: translateX(120%) skewX(-12deg);
     opacity: 0;
   }
 }
@@ -536,14 +582,16 @@ button:focus-visible,
 }
 
 .btn-cv-icon {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--color-primary);
-  transition: transform 0.2s var(--ease-out), color 0.2s;
+  transition: transform 0.3s var(--ease-out), color 0.25s, filter 0.25s;
+  filter: drop-shadow(0 1px 4px rgba(29, 78, 216, 0.2));
 }
 
 .btn-cv:hover .btn-cv-icon {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.06);
   color: var(--color-primary-dark);
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.45));
 }
 
 .btn-cv-copy {
@@ -598,7 +646,9 @@ button:focus-visible,
 /* About */
 #about {
   padding: var(--space-section) 0;
-  background-color: var(--color-surface);
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(29, 78, 216, 0.06), transparent 55%),
+    var(--color-surface);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -659,18 +709,23 @@ button:focus-visible,
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  padding: 0.5rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-surface);
+  padding: 0.55rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   border: 1px solid var(--color-border);
-  transition: transform 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out), border-color 0.2s;
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.25s,
+    filter 0.3s var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .skills-logos img:hover {
-    transform: translateY(-3px);
-    border-color: rgba(29, 78, 216, 0.28);
-    box-shadow: 0 6px 18px rgba(29, 78, 216, 0.12);
+    transform: translateY(-6px) scale(1.12);
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: var(--glow-blue-strong);
+    filter: drop-shadow(0 6px 14px rgba(59, 130, 246, 0.28));
   }
 }
 
@@ -743,6 +798,15 @@ button:focus-visible,
   border: 1px solid var(--color-border);
   overflow: hidden;
   margin-bottom: 1.25rem;
+  transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out), border-color 0.25s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(29, 78, 216, 0.15);
+    box-shadow: var(--shadow-md), var(--glow-blue);
+  }
 }
 
 .card-front,
@@ -987,21 +1051,31 @@ button:focus-visible,
 }
 
 .tools-icons img {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
-  padding: 0.35rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out), border-color 0.2s;
+  padding: 0.4rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.25s,
+    filter 0.3s var(--ease-out),
+    background 0.25s;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .tools-icons img:hover {
-    transform: translateY(-3px);
-    border-color: rgba(147, 197, 253, 0.35);
-    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.2);
+    transform: translateY(-6px) scale(1.14);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(147, 197, 253, 0.55);
+    box-shadow:
+      0 0 0 1px rgba(147, 197, 253, 0.25),
+      0 10px 28px rgba(59, 130, 246, 0.3),
+      0 0 24px rgba(96, 165, 250, 0.25);
+    filter: drop-shadow(0 4px 16px rgba(96, 165, 250, 0.35));
   }
 }
 
@@ -1179,7 +1253,14 @@ button:focus-visible,
   width: 6px;
   height: 4px;
   border-radius: 1px;
-  background: rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.45);
+}
+
+.cv-mini-doc--accent {
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow:
+    0 3px 12px rgba(37, 99, 235, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 @keyframes cvMiniFall {
@@ -1197,12 +1278,25 @@ button:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .btn-cv:hover {
+    animation: none !important;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 1) inset,
+      0 0 0 1px rgba(59, 130, 246, 0.25),
+      0 10px 28px rgba(29, 78, 216, 0.18);
   }
 
   .flip-card {
@@ -1242,10 +1336,15 @@ button:focus-visible,
   }
 
   .skills-logos img:hover,
-  .tools-icons img:hover,
+  .tools-icons img:hover {
+    transform: none;
+    filter: none;
+  }
+
   .btn-primary:hover,
   .btn-cv:hover,
-  .certification-card:hover {
+  .certification-card:hover,
+  .experience-card:hover {
     transform: none;
   }
 
