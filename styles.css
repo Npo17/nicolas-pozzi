@@ -4,8 +4,8 @@
    ----------------------------------------------------------------------------- */
 
 :root {
-  --color-bg: #f1f4f8;
-  --color-surface: #ffffff;
+  --color-bg: #d2dbe7;
+  --color-surface: #e4eaf2;
   --color-text: #12161c;
   --color-text-muted: #5b6470;
   --color-primary: #1d4ed8;
@@ -648,13 +648,14 @@ button:focus-visible,
   display: none !important;
 }
 
-/* About */
+/* About — fondo más profundo (menos brillo blanco) */
 #about {
   padding: var(--space-section) 0;
   background:
-    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(29, 78, 216, 0.06), transparent 55%),
-    var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+    radial-gradient(ellipse 115% 90% at 50% -18%, rgba(29, 78, 216, 0.16), transparent 52%),
+    radial-gradient(ellipse 75% 60% at 95% 35%, rgba(51, 65, 85, 0.14), transparent 48%),
+    linear-gradient(168deg, #b4c2d6 0%, #c2cfe0 30%, #ced9e8 58%, #d8e2ee 100%);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
 }
 
 #about h2 {
@@ -675,9 +676,13 @@ button:focus-visible,
   margin: 0 auto;
   overflow: hidden;
   border-radius: var(--radius-md);
-  background: var(--color-bg);
+  background: linear-gradient(145deg, #c5d3e4, #aebdcf);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  transition:
+    transform 0.4s var(--ease-out),
+    box-shadow 0.4s var(--ease-out),
+    border-color 0.35s;
 }
 
 .profile-img {
@@ -685,6 +690,19 @@ button:focus-visible,
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.45s var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .profile-img-container:hover {
+    transform: scale(1.045);
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: var(--glow-blue-strong), 0 16px 40px rgba(15, 23, 42, 0.12);
+  }
+
+  .profile-img-container:hover .profile-img {
+    transform: scale(1.06);
+  }
 }
 
 .about-text h3 {
@@ -716,8 +734,8 @@ button:focus-visible,
   margin: 0 auto;
   padding: 0.55rem;
   border-radius: var(--radius-md);
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(180deg, #e8eef6 0%, #dde6f2 100%);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   transition:
     transform 0.3s var(--ease-out),
     box-shadow 0.3s var(--ease-out),
@@ -747,7 +765,7 @@ button:focus-visible,
 /* Experience */
 #experience {
   padding: var(--space-section) 0;
-  background: linear-gradient(180deg, #e8edf4 0%, var(--color-bg) 50%, var(--color-surface) 100%);
+  background: linear-gradient(180deg, #c0ccdc 0%, #cad6e4 40%, #d2dbe7 100%);
 }
 
 #experience h2 {
@@ -797,10 +815,10 @@ button:focus-visible,
 }
 
 .experience-card {
-  background: var(--color-surface);
+  background: #e2e9f2;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   overflow: hidden;
   margin-bottom: 1.25rem;
   transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out), border-color 0.25s;
@@ -843,7 +861,7 @@ button:focus-visible,
 }
 
 .card-back {
-  background: #f8fafc;
+  background: #d5dee9;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.45s var(--ease-out);
@@ -1090,14 +1108,15 @@ button:focus-visible,
   }
 }
 
-/* Certifications — fondo más suave (menos blanco puro) */
+/* Certifications — gradiente más marcado, sin blanco plano */
 #certifications {
   padding: var(--space-section) 0;
   background:
-    radial-gradient(ellipse 95% 65% at 50% -5%, rgba(29, 78, 216, 0.075), transparent 55%),
-    linear-gradient(185deg, #e2e8f0 0%, #eef2f7 42%, #f4f6f9 100%);
+    radial-gradient(ellipse 105% 75% at 50% -12%, rgba(29, 78, 216, 0.2), transparent 50%),
+    radial-gradient(ellipse 65% 55% at 0% 100%, rgba(30, 58, 95, 0.12), transparent 50%),
+    linear-gradient(192deg, #a8b8ce 0%, #b6c4d8 22%, #c6d2e2 52%, #d0dbe8 100%);
   text-align: center;
-  border-top: 1px solid rgba(15, 23, 42, 0.07);
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
 }
 
 #certifications h2 {
@@ -1119,8 +1138,8 @@ button:focus-visible,
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  background: var(--color-surface);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #e8eef6;
   position: relative;
   aspect-ratio: 1 / 1;
   transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
@@ -1448,6 +1467,11 @@ button:focus-visible,
   .footer-link:hover i {
     transform: none;
     filter: none;
+  }
+
+  .profile-img-container:hover,
+  .profile-img-container:hover .profile-img {
+    transform: none;
   }
 
   .flip-card {
