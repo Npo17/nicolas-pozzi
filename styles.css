@@ -128,6 +128,11 @@ button:focus-visible,
   outline-offset: 3px;
 }
 
+.footer-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
 /* ========== NAV (mejoras conservadas — no tocar flujo visual del menú) ========== */
 .site-nav {
   position: sticky;
@@ -1085,12 +1090,14 @@ button:focus-visible,
   }
 }
 
-/* Certifications */
+/* Certifications — fondo más suave (menos blanco puro) */
 #certifications {
   padding: var(--space-section) 0;
-  background: var(--color-surface);
+  background:
+    radial-gradient(ellipse 95% 65% at 50% -5%, rgba(29, 78, 216, 0.075), transparent 55%),
+    linear-gradient(185deg, #e2e8f0 0%, #eef2f7 42%, #f4f6f9 100%);
   text-align: center;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
 }
 
 #certifications h2 {
@@ -1112,7 +1119,8 @@ button:focus-visible,
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--color-surface);
   position: relative;
   aspect-ratio: 1 / 1;
   transition: box-shadow 0.25s var(--ease-out), transform 0.25s var(--ease-out);
@@ -1173,38 +1181,166 @@ button:focus-visible,
 
 /* Footer */
 .site-footer {
-  background: #333;
+  background: linear-gradient(180deg, #2a2a2a 0%, #262626 100%);
   color: rgba(255, 255, 255, 0.85);
   text-align: center;
-  padding: 1.75rem 0;
+  padding: 2rem 0 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .site-footer p {
-  margin: 0 0 1rem;
+  margin: 0 0 1.35rem;
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.62);
 }
 
-.site-footer ul {
+.footer-actions {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem 1.5rem;
+  align-items: center;
+  gap: 0.75rem 1rem;
 }
 
-.site-footer a {
-  color: var(--color-nav-ink);
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  transition: color 0.2s;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  transition: transform 0.28s var(--ease-out), border-color 0.28s, background 0.28s, color 0.2s;
 }
 
-.site-footer a:hover {
-  color: #fff;
+.footer-link i {
+  font-size: 1.15rem;
+  line-height: 1;
+  opacity: 0.95;
+  transition: transform 0.28s var(--ease-out), filter 0.28s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-link--linkedin:hover {
+    transform: translateY(-4px) scale(1.06);
+    border-color: rgba(10, 102, 194, 0.85);
+    background: rgba(10, 102, 194, 0.22);
+    color: #fff;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12) inset,
+      0 0 0 1px rgba(10, 102, 194, 0.35),
+      0 10px 32px rgba(10, 102, 194, 0.35),
+      0 0 28px rgba(10, 102, 194, 0.35);
+    animation: footerLinkPulseBlue 2.2s ease-in-out infinite;
+  }
+
+  .footer-link--linkedin:hover i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.35));
+  }
+
+  .footer-link--gmail:hover {
+    transform: translateY(-4px) scale(1.06);
+    border-color: rgba(234, 67, 53, 0.9);
+    background: rgba(234, 67, 53, 0.2);
+    color: #fff;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12) inset,
+      0 0 0 1px rgba(234, 67, 53, 0.4),
+      0 10px 32px rgba(234, 67, 53, 0.32),
+      0 0 28px rgba(234, 67, 53, 0.3);
+    animation: footerLinkPulseRed 2.2s ease-in-out infinite;
+  }
+
+  .footer-link--gmail:hover i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.35));
+  }
+
+  .footer-link--whatsapp:hover {
+    transform: translateY(-4px) scale(1.06);
+    border-color: rgba(37, 211, 102, 0.95);
+    background: rgba(37, 211, 102, 0.18);
+    color: #fff;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12) inset,
+      0 0 0 1px rgba(37, 211, 102, 0.45),
+      0 10px 32px rgba(37, 211, 102, 0.28),
+      0 0 28px rgba(37, 211, 102, 0.32);
+    animation: footerLinkPulseGreen 2.2s ease-in-out infinite;
+  }
+
+  .footer-link--whatsapp:hover i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.35));
+  }
+}
+
+@keyframes footerLinkPulseBlue {
+  0%,
+  100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12) inset,
+      0 0 0 1px rgba(10, 102, 194, 0.35),
+      0 10px 28px rgba(10, 102, 194, 0.28),
+      0 0 22px rgba(10, 102, 194, 0.28);
+  }
+
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14) inset,
+      0 0 0 1px rgba(10, 102, 194, 0.55),
+      0 14px 40px rgba(10, 102, 194, 0.42),
+      0 0 38px rgba(10, 102, 194, 0.45);
+  }
+}
+
+@keyframes footerLinkPulseRed {
+  0%,
+  100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12) inset,
+      0 0 0 1px rgba(234, 67, 53, 0.4),
+      0 10px 28px rgba(234, 67, 53, 0.25),
+      0 0 22px rgba(234, 67, 53, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14) inset,
+      0 0 0 1px rgba(234, 67, 53, 0.6),
+      0 14px 40px rgba(234, 67, 53, 0.38),
+      0 0 38px rgba(234, 67, 53, 0.4);
+  }
+}
+
+@keyframes footerLinkPulseGreen {
+  0%,
+  100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12) inset,
+      0 0 0 1px rgba(37, 211, 102, 0.45),
+      0 10px 28px rgba(37, 211, 102, 0.22),
+      0 0 22px rgba(37, 211, 102, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.14) inset,
+      0 0 0 1px rgba(37, 211, 102, 0.65),
+      0 14px 40px rgba(37, 211, 102, 0.35),
+      0 0 38px rgba(37, 211, 102, 0.4);
+  }
 }
 
 /* Celebración mini-CV (pointer-events: none — no bloquea UX) */
@@ -1297,6 +1433,21 @@ button:focus-visible,
       0 1px 0 rgba(255, 255, 255, 1) inset,
       0 0 0 1px rgba(59, 130, 246, 0.25),
       0 10px 28px rgba(29, 78, 216, 0.18);
+  }
+
+  .footer-link--linkedin:hover,
+  .footer-link--gmail:hover,
+  .footer-link--whatsapp:hover {
+    animation: none !important;
+  }
+
+  .footer-link:hover {
+    transform: none;
+  }
+
+  .footer-link:hover i {
+    transform: none;
+    filter: none;
   }
 
   .flip-card {
