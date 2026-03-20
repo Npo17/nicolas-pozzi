@@ -13,11 +13,16 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
-  <a class="skip-link" href="#main"><span data-lang="es">Saltar al contenido</span><span data-lang="en" class="hidden">Skip to content</span></a>
-
   <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
     <div class="container nav-inner">
-      <a href="#inicio" class="nav-brand">Nicolás Pozzi</a>
+      <a href="#inicio" class="nav-brand" aria-label="Inicio — Nicolás Pozzi">
+        <span class="nav-brand-mark" aria-hidden="true">NP</span>
+        <span class="nav-brand-text">
+          <span class="nav-brand-name">Nicolás Pozzi</span>
+          <span class="nav-brand-role" data-lang="es">DevOps Engineer</span>
+          <span class="nav-brand-role hidden" data-lang="en">DevOps Engineer</span>
+        </span>
+      </a>
       <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
@@ -44,13 +49,22 @@
       <div class="cta-buttons">
         <a href="assets/cv-es.pdf"
            download
-           class="btn btn-primary"
+           class="btn btn-primary btn-cv"
            id="download-cv">
-          <span class="btn-text" data-lang="es">Descargar CV</span>
-          <span class="btn-text hidden" data-lang="en">Download CV</span>
-          <span class="btn-hover-text hidden" data-lang="es">PDF · Listo para compartir</span>
-          <span class="btn-hover-text hidden" data-lang="en">PDF · Ready to share</span>
+          <span class="btn-cv-shimmer" aria-hidden="true"></span>
+          <span class="btn-cv-inner">
+            <i class="fas fa-download btn-cv-icon" aria-hidden="true"></i>
+            <span class="btn-cv-copy">
+              <span class="btn-text" data-lang="es">Descargar CV</span>
+              <span class="btn-text hidden" data-lang="en">Download CV</span>
+              <span class="btn-hover-text hidden" data-lang="es">PDF · Listo para compartir</span>
+              <span class="btn-hover-text hidden" data-lang="en">PDF · Ready to share</span>
+            </span>
+            <i class="fas fa-arrow-right btn-cv-arrow" aria-hidden="true"></i>
+          </span>
         </a>
+        <p class="btn-cv-hint" data-lang="es">Actualizado · Una página · Ideal para recruiters</p>
+        <p class="btn-cv-hint hidden" data-lang="en">Up to date · One page · Recruiter-friendly</p>
         <div id="download-thanks" class="download-thanks hidden" role="status" aria-live="polite">
           <span data-lang="es">Gracias por descargar el CV.</span>
           <span data-lang="en" class="hidden">Thank you for downloading the CV.</span>
@@ -64,8 +78,12 @@
 <!-- Sección Sobre Mí -->
 <section id="about">
   <div class="container">
-    <h2 data-lang="es">Sobre Mí</h2>
-    <h2 data-lang="en" class="hidden">About Me</h2>
+    <header class="section-head">
+      <p class="section-eyebrow" data-lang="es">Perfil</p>
+      <p class="section-eyebrow hidden" data-lang="en">Profile</p>
+      <h2 data-lang="es">Sobre Mí</h2>
+      <h2 data-lang="en" class="hidden">About Me</h2>
+    </header>
     <div class="about-content">
       <div class="profile-img-container">
         <img src="assets/profile.jpg" alt="Nicolás Pozzi" class="profile-img">
@@ -108,8 +126,12 @@
   <!-- Sección Experiencia -->
   <section id="experience">
     <div class="container">
-      <h2 data-lang="es">Experiencia Laboral</h2>
-      <h2 data-lang="en" class="hidden">Work Experience</h2>
+      <header class="section-head section-head--center">
+        <p class="section-eyebrow" data-lang="es">Trayectoria</p>
+        <p class="section-eyebrow hidden" data-lang="en">Career</p>
+        <h2 data-lang="es">Experiencia Laboral</h2>
+        <h2 data-lang="en" class="hidden">Work Experience</h2>
+      </header>
       <div class="timeline">
         <!-- Experiencia 1: Kolektor UT -->
         <div class="timeline-item">
@@ -269,10 +291,14 @@
   <!-- Sección Proyectos -->
   <section id="projects">
     <div class="container">
-      <h2 data-lang="es">Proyectos Destacados</h2>
-      <h2 data-lang="en" class="hidden">Featured Projects</h2>
-      <p class="section-subtitle" data-lang="es">Algunos de los proyectos en los que he trabajado.</p>
-      <p class="section-subtitle hidden" data-lang="en">Some of the projects I've worked on.</p>
+      <header class="section-head section-head--center section-head--on-dark">
+        <p class="section-eyebrow" data-lang="es">Casos técnicos</p>
+        <p class="section-eyebrow hidden" data-lang="en">Technical work</p>
+        <h2 data-lang="es">Proyectos Destacados</h2>
+        <h2 data-lang="en" class="hidden">Featured Projects</h2>
+        <p class="section-subtitle" data-lang="es">Algunos de los proyectos en los que he trabajado.</p>
+        <p class="section-subtitle hidden" data-lang="en">Some of the projects I've worked on.</p>
+      </header>
 
       <!-- Tarjeta de Monitoreo de Servidores y URLs -->
       <div class="flip-card" data-flip-card tabindex="0" role="group" aria-label="Proyecto: monitoreo de recursos">
@@ -469,8 +495,12 @@
 <!-- Sección Certificaciones -->
 <section id="certifications">
   <div class="container">
-    <h2 data-lang="es">Certificaciones</h2>
-    <h2 data-lang="en" class="hidden">Certifications</h2>
+    <header class="section-head section-head--center">
+      <p class="section-eyebrow" data-lang="es">Credenciales</p>
+      <p class="section-eyebrow hidden" data-lang="en">Credentials</p>
+      <h2 data-lang="es">Certificaciones</h2>
+      <h2 data-lang="en" class="hidden">Certifications</h2>
+    </header>
 
     <div class="certifications-grid">
 
@@ -593,9 +623,13 @@
 
 <footer class="site-footer">
   <div class="container">
+    <header class="footer-head">
+      <p class="section-eyebrow section-eyebrow--footer" data-lang="es">Contacto</p>
+      <p class="section-eyebrow section-eyebrow--footer hidden" data-lang="en">Contact</p>
+    </header>
     <p data-lang="es">&copy; 2026 Nicolás Pozzi. Todos los derechos reservados.</p>
     <p data-lang="en" class="hidden">&copy; 2026 Nicolás Pozzi. All rights reserved.</p>
-    <ul>
+    <ul class="footer-links">
       <!-- LinkedIn -->
       <li>
         <a href="https://www.linkedin.com/in/nicol%C3%A1s-pozzi-bb769921b/" target="_blank" rel="noopener noreferrer">
@@ -618,7 +652,8 @@
   </div>
 </footer>
 
-  <!-- Script para cambio de idioma y tarjetas interactivas -->
+  <div id="cv-celebration-root" class="cv-celebration-root" aria-hidden="true"></div>
+
   <script src="script.js"></script>
 </body>
 </html>

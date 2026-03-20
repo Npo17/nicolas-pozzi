@@ -59,6 +59,42 @@
     });
   }
 
+  function launchCvCelebration() {
+    if (getReducedMotion()) return;
+
+    var root = document.getElementById("cv-celebration-root");
+    if (!root) return;
+
+    root.innerHTML = "";
+
+    var count = 20;
+    var frag = document.createDocumentFragment();
+    var i;
+
+    for (i = 0; i < count; i++) {
+      var el = document.createElement("span");
+      el.className = "cv-mini-doc";
+      el.setAttribute("aria-hidden", "true");
+      var startX = Math.random() * 100;
+      var delay = Math.random() * 0.4;
+      var dur = 2.1 + Math.random() * 0.85;
+      var rot = (Math.random() - 0.5) * 48;
+      var drift = (Math.random() - 0.5) * 100;
+      el.style.left = startX + "%";
+      el.style.animationDelay = delay + "s";
+      el.style.animationDuration = dur + "s";
+      el.style.setProperty("--cv-rot", rot + "deg");
+      el.style.setProperty("--cv-drift", drift + "px");
+      frag.appendChild(el);
+    }
+
+    root.appendChild(frag);
+
+    window.setTimeout(function () {
+      root.innerHTML = "";
+    }, 3400);
+  }
+
   function initDownloadCv() {
     var downloadBtn = document.getElementById("download-cv");
     var downloadThanks = document.getElementById("download-thanks");
@@ -93,6 +129,7 @@
       if (thanksMessage) thanksMessage.classList.remove("hidden");
       if (otherThanksMessage) otherThanksMessage.classList.add("hidden");
       downloadThanks.classList.remove("hidden");
+      launchCvCelebration();
       window.setTimeout(function () {
         downloadThanks.classList.add("hidden");
       }, 3200);
