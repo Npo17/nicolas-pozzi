@@ -424,7 +424,7 @@ button:focus-visible,
   position: relative;
   z-index: 1;
   padding: var(--space-section) 0;
-  max-width: 40rem;
+  max-width: min(46rem, 92vw);
   margin: 0 auto;
 }
 
@@ -452,11 +452,44 @@ button:focus-visible,
   margin: 0 0 1rem;
 }
 
-.hero-lead {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 1.75rem;
+.hero-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem 0.45rem;
+  font-size: clamp(0.88rem, 2.1vw, 1.02rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.84);
+  margin: 0 auto 1.75rem;
+  max-width: 38rem;
+  text-align: center;
+}
+
+.hero-pillar {
+  font-weight: 500;
+}
+
+.hero-pillar--accent {
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 0 28px rgba(147, 197, 253, 0.48),
+    0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hero-pillar-sep {
+  color: rgba(255, 255, 255, 0.34);
+  font-weight: 300;
+  padding: 0 0.05rem;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pillar--accent {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+  }
 }
 
 .cta-buttons {
