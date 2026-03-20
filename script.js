@@ -151,6 +151,8 @@
         var open = !card.classList.contains("active");
         card.classList.toggle("active", open);
         button.setAttribute("aria-expanded", open ? "true" : "false");
+        var panel = document.getElementById(button.getAttribute("aria-controls"));
+        if (panel) panel.setAttribute("aria-hidden", open ? "false" : "true");
       });
     });
   }
